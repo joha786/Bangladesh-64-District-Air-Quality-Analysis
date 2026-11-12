@@ -110,36 +110,50 @@ Twelve geographically unseen districts were excluded from training and validatio
 
 Results are reported separately for seen and unseen districts.
 
-## Experimental Results
-
-The framework demonstrates strong short-term forecasting performance, with a gradual decline as the prediction horizon increases.
-
 ### Overall Performance
 
-| Horizon | Seen Accuracy | Seen Macro-F1 | Seen QWK |
-|---|---:|---:|---:|
-| 1h | 98.98% | 98.52% | 99.48% |
-| 3h | — | — | — |
-| 6h | — | — | — |
-| 12h | — | — | — |
-| 24h | 79.54% | 71.18% | 88.88% |
+## Experimental Results
 
-| Horizon | Unseen Accuracy | Unseen Macro-F1 | Unseen QWK |
-|---|---:|---:|---:|
-| 1h | 98.92% | 98.41% | 99.41% |
-| 3h | — | — | — |
-| 6h | — | — | — |
-| 12h | — | — | — |
-| 24h | 79.65% | 71.72% | 88.02% |
+The proposed framework was evaluated across five forecasting horizons (1h, 3h, 6h, 12h, and 24h) using Accuracy, Macro-F1, and Quadratic Weighted Kappa (QWK). Performance was reported separately for seen and geographically unseen districts.
 
-**24-hour regression performance**
+### Overall Classification Performance
+
+**Seen Districts**
+
+| Horizon | Accuracy | Macro-F1 | QWK |
+|---|---:|---:|---:|
+| 1h | 99.0% | 98.5% | 99.5% |
+| 3h | 97.9% | 96.6% | 98.9% |
+| 6h | 95.1% | 92.7% | 97.5% |
+| 12h | 89.0% | 83.9% | 94.3% |
+| 24h | 79.5% | 71.2% | 88.9% |
+
+**Geographically Unseen Districts**
+
+| Horizon | Accuracy | Macro-F1 | QWK |
+|---|---:|---:|---:|
+| 1h | 98.9% | 98.4% | 99.4% |
+| 3h | 97.8% | 96.5% | 98.8% |
+| 6h | 95.2% | 92.4% | 97.4% |
+| 12h | 89.0% | 83.8% | 93.9% |
+| 24h | 79.7% | 71.7% | 88.0% |
+
+### 24-Hour Regression Performance
+
+The 24-hour forecasting task uses numerical AQI regression followed by AQI category mapping.
 
 | Evaluation Group | RMSE |
 |---|---:|
 | Seen Districts | 14.43 AQI points |
 | Unseen Districts | 14.50 AQI points |
 
-*Note: Intermediate-horizon values are omitted here until the complete finalized results are added.*
+### Key Findings
+
+- **Strong short-term forecasting:** The 1-hour horizon achieves approximately 99% Accuracy and Macro-F1 above 98% for both evaluation groups.
+- **Gradual performance decline:** Classification performance decreases as the forecasting horizon increases.
+- **Spatial generalization:** Seen and unseen districts demonstrate closely comparable performance across all horizons.
+- **Ordinal consistency:** QWK remains relatively high, reaching approximately 88% even at the 24-hour horizon.
+- **24-hour prediction:** Regression RMSE remains comparable between seen and unseen districts, at 14.43 and 14.50 AQI points, respectively.
 
 ## Model Interpretability
 
