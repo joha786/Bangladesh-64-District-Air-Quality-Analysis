@@ -26,6 +26,14 @@ The dataset contains hourly air-quality and meteorological observations covering
 | ERA5-Land | Meteorological variables |
 | Open-Meteo | Data access interface |
 
+## Dataset Citation
+
+The dataset used in this research is publicly available through Mendeley Data:
+
+> Joha, Md Joha Mondal (2026), "Bangladesh 64-District Hourly Air Quality and Weather Dataset (2023–2026)", Mendeley Data, V1. https://doi.org/10.17632/c7trkj4hzv.1
+
+**DOI:** [10.17632/c7trkj4hzv.1](https://doi.org/10.17632/c7trkj4hzv.1)
+
 ### Variables
 
 **Air-quality variables**
